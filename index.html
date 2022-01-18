@@ -15,8 +15,8 @@
             <input type="text" id="aggiungi" placeholder="scrivi qualcosa" @keyup.enter="aggiungiElemento()">
             <button @click="aggiungiElemento()">Aggiungi</button>
         </div>
-        <div v-for="(elemento,index) in array" class="d-flex-list">
-            <span @click ="isActive = !isActive" :class="{active: isActive}">{{elemento.text}}</span>
+        <div v-for="(elemento, index) in array" class="d-flex-list">
+            <span @click ="isActive(index)" :class="{'active' : array[index].done}">{{elemento.text}}</span>
             <i class="far fa-times-circle" @click="cancellaElemento(index)"></i>
         </div>
     </div>

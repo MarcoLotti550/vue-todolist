@@ -1,7 +1,7 @@
 let vm = new Vue({
     el:"#app",
     data: {
-        isActive: false,
+        done: false,
         array: []
     },
     methods:{
@@ -18,8 +18,12 @@ let vm = new Vue({
         cancellaElemento : function(index){
             this.array.splice(index, 1);
         },
-        isActive : function (index) {
-           
+        isActive : function(index) {
+            if (this.array[index].done == false) {
+                this.array[index].done  = true;
+            }else{
+                this.array[index].done  = false;
+            }
         },
     }
 });
