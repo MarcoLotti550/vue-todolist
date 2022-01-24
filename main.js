@@ -1,29 +1,107 @@
-let vm = new Vue({
-    el:"#app",
+let app = new Vue({
+    el: '#app',
     data: {
-        done: false,
-        array: []
+      contatoreChat: null,
+      inputChatUtente:"",
+      ricercaInput: "",
+      clock: null,
+        datiUtentiChat: [
+          {
+            name: 'Michele',
+            avatar: 'img/user_3.png',
+            visible: true,
+            messages: [
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: 'Hai portato a spasso il cane?',
+              status: 'sent'
+              },
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: 'Ricordati di dargli da mangiare',
+              status: 'sent'
+              },
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: 'Tutto fatto!',
+              status: 'received'
+              }
+            ],
+          },
+          {
+            name: 'Flavio',
+            avatar: 'img/user_4.png',
+            visible: true,
+            messages: [
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: 'Hai la macchina?',
+              status: 'sent'
+              },
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: 'Mi raccomando',
+              status: 'sent'
+              },
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: 'La benzina ce',
+              status: 'received'
+              }
+            ],
+          },
+          {
+            name: 'Bruno',
+            avatar: 'img/user_5.png',
+            visible: true,
+            messages: [
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: '123 stella',
+              status: 'sent'
+              },
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: 'ti ho visto',
+              status: 'sent'
+              },
+              {
+              date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+              text: 'Ma come hai fatto?',
+              status: 'received'
+              }
+            ],
+          },
+        ]
+
     },
+
+    updated: function(){
+      this.datiUtentiChat.forEach(element => {
+        element.visible = element.name.toLowerCase().includes(this.ricercaInput.toLowerCase());
+      });
+    },
+
     methods:{
-        aggiungiElemento : function(){
-            if(document.getElementById("aggiungi").value != ""){
-                let object = {text : document.getElementById("aggiungi").value,
-                          done : false};
-                this.array.push(object);
-                document.getElementById("aggiungi").value = "";
-            }
+      sceltaChat: function(indice){
+        this.contatoreChat = indice;
+      },
+      sendMessage: function(ichat){
+        this.datiUtentiChat[ichat].messages.push({
+          text: 'ok',
+          status: 'received',
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss")
+        });
+      },
 
-        },
-
-        cancellaElemento : function(index){
-            this.array.splice(index, 1);
-        },
-        isActive : function(index) {
-            if (this.array[index].done == false) {
-                this.array[index].done  = true;
-            }else{
-                this.array[index].done  = false;
-            }
-        },
+      addTodo: function(chat) {
+        this.datiUtentiChat[chat].messages.push({
+          text: this.inputChatUtente,
+          status: 'sent',
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss")
+        });
+        this.inputChatUtente = "";
+        this.clock = setTimeout(this.sendMessage(chat), 1000);
+      },
     }
-});
+  })

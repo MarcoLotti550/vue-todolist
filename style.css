@@ -1,15 +1,264 @@
-*{
-    margin: 0%;
-    padding: 0%;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-.d-flex-list{
-    display: flex;
-    width: 300px;
-    height: 30px;
-    justify-content: space-between;
-    align-items: center;
+
+body{
+    background-color: white;
 }
-.active{
-    text-decoration: line-through;
+
+#bGreen {
+    background-color: rgba(0,124,127,255);
+    height: 100px;
+    width: 100vw;
+    position: absolute;
+    z-index: 0;
+}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+}
+
+
+#container {
+    width: 100%;
+}
+
+#BoolzappChat {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.clearfix, #BoolzappChat, #parteAltaChat, #paddingProfiloUtente::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#contatti {
+    width: 40%;
+    height: auto;
+    float: left;
+    position: relative;
+    top: 0;
+    left: 0%;
+    border: 1px solid lightgray;
+}
+
+#chat {
+    width: 60%;
+    height: auto;
+    float: right;
+    position: relative;
+    top: 0;
+    left: 0%;
+    border: 1px solid lightgray;
+
+}   
+
+
+#profiloUtente, #parteAltaChat{
+    width: 100%;
+    background-color: rgba(231,231,231,255);
+
+}
+
+#paddingProfiloUtente{
+    padding: 10px;
+}
+
+.imgAvatarUtente{
+    height: 30px;
+    width: auto;
+    margin-left: 2%;
+    vertical-align: middle;
+    border-radius: 100%;
+}
+
+#testoProfilo{
+    margin-left: 2%;
+}
+
+#imgeprofile {
+    float: left;
+    width: 70%;
+}
+
+#iconeUtene {
+    float: right;
+    width: 30%;
+    text-align: center;
+}
+
+.pIcons{
+    margin-left: 1%;
+    vertical-align: middle;
+}
+
+.chatUtenti{
+    background-color: white;
+    min-height: 400px;
+}
+
+.chatUtenti {
+    width: 100%;
+}
+
+.listaAvatarUtenti{
+    float: left;
+    width: 20%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.previewChat{
+    float: right;
+    width: 70%;
+}
+
+.padingImg{
+    padding: 2%;
+}
+
+.bordoChat{
+    width: 100%;
+}
+
+.bordoChat:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+#parteAltaChat{
+    border-left: 1px solid lightgrey;
+}
+
+.spazioAvatar{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.infoUtenteChat{
+    float: left;
+    width: 50%;
+    text-align: center; 
+}
+
+#opzioniChat{
+    float: left;
+    width: 30%;
+    padding: 2%;
+}
+
+#sfondochat{
+    background-color: rgb(124, 253, 124);
+    min-height: 450px;
+    width: auto;
+}
+
+#scrollChat{
+    overflow: auto;
+    max-height: 381px;
+}
+
+.textOptionH{
+    font-size: 18px;
+}
+
+.testoOptionP{
+    font-size: 15px;
+}
+
+.widthChat{
+    width: 100%;
+    padding: 10px;
+}
+
+.chatRight{
+    float: right;
+    background-color: green;
+}
+
+.chatLeft{
+    float: left;
+    background-color: lightgray;
+}
+
+.pChat{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.zonaInputChat{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: lightgray;
+    width: 100%;
+}
+
+.emoticonLeft, .inputCenter, .sendRight{
+    float: left;
+    text-align: center;
+}
+
+.emoticonLeft{
+    width: 10%;
+}
+
+.inputCenter{
+    width: 80%;
+}
+
+.sendRight{
+    width: 10%;
+}
+
+.opzioniInputText{
+    width: 100%;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.spazioChat{
+    padding: 10px;
+}
+
+.graficaOpzioniChat{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: space-evenly;
+}
+
+.pIcons{
+    margin: 0 5px;
+}
+
+.fontDate{
+    font-size: 10px;
+    padding: 10px;
+}
+
+.directionpreviewChat{
+    float: right;
+    margin-right: 20px;
+}
+
+.ricercaUtenti{
+    width: 100%;
+    background-color: lightgray;
+}
+
+.pSearchChat{
+    padding: 10px;
+}
+
+i{
+    cursor: pointer;
 }
